@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="contactForm">
+            <arguments>
+                <argument name="my_new_custom_text_for_contacts" xsi:type="string">Have questions
+                    about your order? Just email us your order number below.</argument>
+
+                <argument name="button_lock_manager" xsi:type="object">
+                    Magento\Framework\View\Element\ButtonLockManager</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

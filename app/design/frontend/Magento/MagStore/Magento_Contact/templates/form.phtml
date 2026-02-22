@@ -1,0 +1,9 @@
+<?php
+$myCustomText = $block->getData('my_new_custom_text_for_contacts');
+?>
+
+<?php if ($myCustomText): ?>
+    <div class="my-custom-message_contacts">
+        <?= $block->escapeHtml($myCustomText) ?>
+    </div>
+<?php endif; ?>

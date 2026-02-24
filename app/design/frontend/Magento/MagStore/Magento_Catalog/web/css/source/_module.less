@@ -50,7 +50,11 @@
         margin-bottom: 18px;
     }
 }
-
+.page-title-wrapper {
+    .page-title {
+        text-align: center;
+    }
+}
 & when (@media-common = true) {
     //
     //  Category view
@@ -639,6 +643,23 @@
 
     .product-add-form {
         &:extend(.abs-revert-field-type-desktop all);
+    }
+
+    .block-compare .block-title,
+    .block-wishlist .block-title {
+        background-color: #bed6ef;
+        padding: 12px 24px;
+        display: block;
+        width: max-content;
+        border-radius: 10px;
+        color: #131313;
+        font-size: 1.9rem;
+        font-weight: 400 !important;
+        margin-bottom: 20px !important;
+
+        strong {
+            font-weight: 400 !important;
+        }
     }
 }
 

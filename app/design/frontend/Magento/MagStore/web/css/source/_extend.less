@@ -1,24 +1,69 @@
-.media-width(@extremum, @break)
-  when
-  (@extremum = "min")
-  and
-  (@break = @screen__m) {
-  .page-layout-2columns-right {
-    .column.main {
-      width: 100% !important;
-      margin: 0 auto;
-    }
+@toolbar-background: transparent;
 
-    .sidebar-additional {
-      display: none;
+.media-width(@extremum, @break)
+    when
+    (@extremum = "min")
+    and
+    (@break = @screen__m) {
+    .page-layout-2columns-right {
+        .column.main {
+            width: 100% !important;
+            margin: 0 auto;
+        }
+
+        .sidebar-additional {
+            display: none;
+        }
     }
-  }
 }
 
 .page-layout-2columns-right .column.main {
-  width: 100% !important;
+    width: 100% !important;
 }
 
-.page-title-wrapper {
-  text-align: center;
+.block-minicart {
+    .minicart-items-wrapper {
+        border-top: none !important;
+        border-bottom: 1px solid #ccc !important;
+        height: auto !important;
+        max-height: 450px !important;
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+
+        .minicart-items {
+            background: transparent !important;
+            margin: 0 !important;
+        }
+        .minicart-items-wrapper-box {
+            background-color: #ededaf !important;
+            padding: 8px 12px !important;
+            border-radius: 6px;
+        }
+        .subtotal {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .label {
+                display: inline-block;
+                width: auto;
+                text-align: center;
+                float: none;
+                font-weight: 700;
+            }
+            .amount .price-wrapper:first-child .price {
+                font-size: 2.25rem !important;
+                color: #d62a2a !important;
+            }
+        }
+        .checkout {
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 12px 18px !important;
+        }
+    }
 }

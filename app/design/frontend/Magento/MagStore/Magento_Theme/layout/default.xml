@@ -10,7 +10,7 @@
             </arguments>
         </referenceBlock>
 
-        <referenceBlock name="catalog.compare.sidebar" remove="true" />
-        <referenceBlock name="category.product.addto.compare" remove="true" />
+        <!-- <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="category.product.addto.compare" remove="true" /> -->
     </body>
 </page>

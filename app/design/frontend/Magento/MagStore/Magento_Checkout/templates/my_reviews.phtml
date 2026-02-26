@@ -1,0 +1,37 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$item = $block->getItem();
+
+if (!$item) {
+    $item = $block->getParentBlock() ? $block->getParentBlock()->getItem() : null;
+}
+
+$product = $item->getProduct();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$summaryModel = $objectManager->create(\Magento\Review\Model\Review\Summary::class);
+$reviewModel = $objectManager->create(\Magento\Review\Model\Review::class);
+
+$summary = $summaryModel->setStoreId($product->getStoreId())->load($product->getId());
+$ratingPercent = $summary->getRatingSummary();
+$reviewsCount = $summary->getReviewsCount();
+?>
+<?php if ($reviewsCount > 0): ?>
+    <div class="wrapper-block-review">
+        <ul class="list-block-review">
+            <li class="item-block-review">
+                <p class="item-active-block-review" style="width:<?= (float)$ratingPercent ?>%;"></p>
+            </li>
+            <li class="item-block-review">
+                <p class="item-active-block-review" style="width:<?= (float)$ratingPercent ?>%;"></p>
+            </li>
+        </ul>
+        <p class="text-block-review">
+            <span><?= $escaper->escapeHtml($reviewsCount) ?></span>
+            <span><?= $escaper->escapeHtml(__('Reviews')) ?></span>
+        </p>
+    </div>
+<?php else : ?>
+    <p class="none-review"><?= $escaper->escapeHtml(__('No reviews yet.')) ?></p>
+<?php endif; ?>

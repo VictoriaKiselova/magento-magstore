@@ -1,0 +1,37 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \MagStore\ProductFeatures\ViewModel\ReviewSummary $viewModel */
+
+$item = $block->getItem();
+$product = ($item) ? $item->getProduct() : null;
+
+if (!$product) {
+    return;
+}
+
+$viewModel = $block->getViewModel();
+
+if (!$viewModel) {
+    return;
+}
+
+$reviewData = $viewModel->getReviewSummaryData($product);
+$ratingPercent = $reviewData['rating_percent'];
+$reviewsCount = $reviewData['reviews_count'];
+?>
+<?php if ($reviewsCount > 0): ?>
+    <div class="wrapper-block-review">
+        <ul class="list-block-review">
+            <li class="item-block-review">
+                <div class="item-active-block-review" style="width:<?= (float)$ratingPercent ?>%;"></div>
+            </li>
+        </ul>
+        <p class="text-block-review">
+            <span><?= $block->escapeHtml($reviewsCount) ?></span>
+            <span><?= $block->escapeHtml(__('Reviews')) ?></span>
+        </p>
+    </div>
+<?php else : ?>
+    <p class="none-review"><?= $block->escapeHtml(__('No reviews yet.')) ?></p>
+<?php endif; ?>

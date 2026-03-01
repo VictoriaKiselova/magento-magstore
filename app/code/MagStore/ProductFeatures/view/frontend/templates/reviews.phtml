@@ -1,0 +1,30 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \MagStore\ProductFeatures\ViewModel\ReviewSummary $viewModel */
+/** @var \Magento\Framework\Escaper $escaper */
+
+$viewModel = $block->getData('review_view_model');
+$item = $block->getItem() ?? ($block->getParentBlock() ? $block->getParentBlock()->getItem() : null);
+
+if ($item && ($product = $item->getProduct())):
+    $summary = $viewModel->getReviewData($product);
+    $ratingPercent = $summary->getRatingSummary();
+    $reviewsCount = $summary->getReviewsCount();
+?>
+    <?php if ($reviewsCount > 0): ?>
+        <div class="wrapper-block-review">
+            <div class="rating-summary">
+                <div class="rating-result" title="<?= (float)$ratingPercent ?>%">
+                    <span style="width:<?= (float)$ratingPercent ?>%"></span>
+                </div>
+            </div>
+            <p class="text-block-review">
+                <span><?= $escaper->escapeHtml($reviewsCount) ?></span>
+                <span><?= $escaper->escapeHtml(__('Reviews')) ?></span>
+            </p>
+        </div>
+    <?php else: ?>
+        <p class="none-review"><?= $escaper->escapeHtml(__('No reviews yet.')) ?></p>
+    <?php endif; ?>
+<?php endif; ?>

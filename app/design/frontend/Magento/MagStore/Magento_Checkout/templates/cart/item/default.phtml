@@ -61,8 +61,11 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                     <?= $addInfoBlock->setItem($_item)->toHtml() ?>
                 <?php endif; ?>
                 <?= $block->getLayout()->createBlock(\Magento\Framework\View\Element\Template::class)
-                    ->setTemplate('Magento_Checkout::my_reviews.phtml')
+                    ->setTemplate('Magento_Checkout::cart/item/my_reviews.phtml')
                     ->setData('item', $_item)
+
+                    ->setViewModel($block->getLayout()->createBlock(\Magento\Framework\View\Element\Template::class)->getData('view_model')
+                        ?? \Magento\Framework\App\ObjectManager::getInstance()->get(\MagStore\ProductFeatures\ViewModel\ReviewSummary::class))
                     ->toHtml();
                 ?>
             </div>

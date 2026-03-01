@@ -1,0 +1,87 @@
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        border-radius: 0.6rem;
+        padding: 1rem 0.5rem;
+        background-color: @slider-bg;
+    }
+    .slick-list {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex !important;
+        align-items: stretch;
+    }
+    .slick-slide {
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .slick-initialized .slick-slide {
+        display: block;
+    }
+    .carousel-test-list {
+        box-shadow:
+            0 1.2rem 0.2rem -0.8rem @warm-shadow,
+            inset 0 0.2rem 0.8rem 0 @warm-shadow;
+        margin-bottom: 1.6rem;
+    }
+    .product-item {
+        min-height: 0;
+        height: auto;
+        padding: 0.8rem 0.8rem 1.2rem 0.8rem;
+        border: 0.1rem solid @border-gray;
+        border-radius: 0.7rem;
+        background-color: @product-bg;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0.5rem 0.5rem 1.5rem -0.5rem @gray-shadow;
+        box-sizing: border-box;
+        margin: 0 10px;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .carousel-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+        background-color: #fff;
+        margin-bottom: 0.9rem;
+        border-radius: 0.7rem;
+        flex-shrink: 0;
+    }
+    .carousel-description {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        flex-grow: 1;
+        justify-content: center;
+    }
+    .product-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: @name-blue;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+        min-height: 3.2rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

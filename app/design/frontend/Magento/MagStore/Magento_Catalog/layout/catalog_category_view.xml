@@ -6,6 +6,5 @@
         <move element="page.main.title"
             destination="content"
             before="-" />
-
     </body>
 </page>

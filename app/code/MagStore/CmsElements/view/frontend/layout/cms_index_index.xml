@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="vika.main.text.block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">welcome-block-text-vika</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Framework\View\Element\Template"
+                name="vika.welcome.page.file"
+                template="MagStore_CmsElements::welcome-page.phtml"
+                after="vika.main.text.block" />
+        </referenceContainer>
+    </body>
+</page>

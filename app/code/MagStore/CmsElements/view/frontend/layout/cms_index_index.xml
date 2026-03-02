@@ -10,7 +10,7 @@
             </block>
 
             <block class="Magento\Framework\View\Element\Template"
-                name="vika.welcome.page.file"
+                name="item-wrapper"
                 template="MagStore_CmsElements::welcome-page.phtml"
                 after="vika.main.text.block" />
         </referenceContainer>

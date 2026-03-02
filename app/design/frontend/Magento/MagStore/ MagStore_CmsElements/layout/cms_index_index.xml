@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="main.column.wrapper" htmlTag="div"
+                htmlClass="main-three-column-wrapper">
+                <block class="Magento\Framework\View\Element\Template"
+                    name="about-us-block"
+                    template="Magento_Theme::about_us.phtml" />
+                <block class="Magento\Framework\View\Element\Template"
+                    name="contacts-block"
+                    template="Magento_Theme::our_contacts.phtml" />
+            </container>
+        </referenceContainer>
+
+        <move element="block.static.block" destination="main.column.wrapper" before="-" />
+        <move element="item.wrapper" destination="main.column.wrapper" after="-" />
+
+    </body>
+</page>

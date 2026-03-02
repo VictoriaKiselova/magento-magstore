@@ -379,6 +379,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'MagStore_CmsElements' => 1,
         'MagStore_ProductFeatures' => 1,
+        'MagStore_Tabs' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeCustomerBalance' => 1,
         'PayPal_BraintreeGiftCard' => 1,

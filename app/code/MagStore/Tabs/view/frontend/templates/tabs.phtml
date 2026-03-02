@@ -1,0 +1,56 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+
+<div id="custom-tabs" class="product data items"
+    data-mage-init='{
+        "tabs": {
+            "openedState": "active",
+            "collapsible": true,
+            "active": 0,
+            "animate": {"duration": 200}
+        },
+        "tabsSliderfix": {}
+     }'>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-text">
+            <?= $escaper->escapeHtml(__('Information')) ?>
+        </a>
+    </div>
+    <div id="tab-text" class="item content" data-role="content">
+        <p><?= $escaper->escapeHtml(__("We weren't looking to start a business. We were just looking for a jacket that actually worked. After wasting time and money on things that broke, faded, or just didn't feel right, we decided to make our own.")) ?></p>
+    </div>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-slider">
+            <?= $escaper->escapeHtml(__('Slider')) ?>
+        </a>
+    </div>
+    <div id="tab-slider" class="item content" data-role="content" style="display:none;">
+        <?= $block->getChildHtml('slider.content') ?>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'mage/tabs'
+    ], function($) {
+        var tabs = $('#custom-tabs');
+
+        tabs.on('beforeOpen', function(event) {
+            if ($(event.target).attr('id') === 'tab-slider') {
+                $(event.target).show();
+            }
+        });
+        tabs.on('dimensionsChanged', function() {
+            setTimeout(function() {
+                $(window).trigger('resize');
+                $('body').trigger('contentUpdated');
+            }, 250);
+        });
+    });
+</script>

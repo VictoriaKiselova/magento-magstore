@@ -10,5 +10,7 @@
                 <argument name="logo_alt" xsi:type="string">Logo</argument>
             </arguments>
         </referenceBlock>
+        <referenceBlock name="item-wrapper" remove="true"></referenceBlock>
+
     </body>
 </page>

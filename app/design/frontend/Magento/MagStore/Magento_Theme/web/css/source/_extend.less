@@ -4,3 +4,22 @@
 .page-footer {
     background-color: @light-blue !important;
 }
+.column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .column {
+        grid-template-columns: 1fr 1fr;
+    }
+}

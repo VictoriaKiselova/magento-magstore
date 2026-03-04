@@ -4,7 +4,7 @@
 /** @var \Magento\Framework\Escaper $escaper */
 ?>
 
-<div id="custom-tabs" class="product data items"
+<div id="custom-tabs" class="product data items" name="custom-tabs"
     data-mage-init='{
         "tabs": {
             "openedState": "active",
@@ -20,8 +20,8 @@
             <?= $escaper->escapeHtml(__('Information')) ?>
         </a>
     </div>
-    <div id="tab-text" class="item content" data-role="content">
-        <p><?= $escaper->escapeHtml(__("We weren't looking to start a business. We were just looking for a jacket that actually worked. After wasting time and money on things that broke, faded, or just didn't feel right, we decided to make our own.")) ?></p>
+    <div id="tab-popup" class="item content" data-role="content">
+        <?= $block->getChildHtml('contact.content') ?>
     </div>
 
     <div class="item title" data-role="collapsible">

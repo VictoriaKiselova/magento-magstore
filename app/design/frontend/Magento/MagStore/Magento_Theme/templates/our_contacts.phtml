@@ -1,13 +1,43 @@
-<div name="contacts-block">
-    <h1><?= $escaper->escapeHtml(__('Contacts')) ?></h1>
-    <ul>
-        <li>
-            <p><?= $escaper->escapeHtml(__('Email:')) ?></p>
-            <p><?= $escaper->escapeHtml(__('hello@yourstore.com')) ?></p>
-        </li>
-        <li>
-            <p><?= $escaper->escapeHtml(__('Socials:')) ?></p>
-            <p><?= $escaper->escapeHtml(__('@YourStoreName (IG/TikTok)')) ?></p>
-        </li>
-    </ul>
+<button id="button">
+    <span><?= $block->escapeHtml(__('Contact us')) ?></span>
+</button>
+
+<div id="modal-popup-contact" style="display:none;">
+    <div class="modal-body-content">
+        <div class="contact-methods">
+            <div class="method-item">
+                <strong><?= $escaper->escapeHtml(__('Messenger:')) ?></strong>
+                <p><a href="https://t.me/yourstore" class="action secondary">Telegram</a> | <a href="viber://chat?number=12345" class="action secondary">Viber</a></p>
+            </div>
+            <div class="method-item">
+                <strong><?= $escaper->escapeHtml(__('Call:')) ?></strong>
+                <p><a href="tel:+380XXXXXXXXX">+38 (0XX) XXX-XX-XX</a></p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ], function($, modal) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            buttons: [{
+                text: $.mage.__('Ok'),
+                class: '',
+                click: function() {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#modal-popup-contact'));
+        $("#button").click(function() {
+            $('#modal-popup-contact').modal('openModal');
+        });
+    });
+</script>

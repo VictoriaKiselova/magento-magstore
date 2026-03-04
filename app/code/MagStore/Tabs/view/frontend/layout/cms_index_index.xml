@@ -19,6 +19,12 @@
                             MagStore\ProductFeatures\ViewModel\ReviewSummary</argument>
                     </arguments>
                 </block>
+
+                <block class="Magento\Framework\View\Element\Template"
+                    name="vika.tabs.contact.wrapper"
+                    as="contact.content"
+                    template="Magento_Theme::our_contacts.phtml">
+                </block>
             </block>
         </referenceContainer>
     </body>

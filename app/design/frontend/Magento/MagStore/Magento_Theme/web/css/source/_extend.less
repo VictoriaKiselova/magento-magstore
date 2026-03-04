@@ -4,22 +4,51 @@
 .page-footer {
     background-color: @light-blue !important;
 }
-.column {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    width: 100%;
-    box-sizing: border-box;
+.page-header .header.panel {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 32px !important;
+    height: auto !important;
+}
+.message.info {
+    margin: 0 !important;
+}
+.about-us-block > h1 {
+    font-size: 2.6rem !important;
+    margin-bottom: 1.6rem;
+}
+.minicart-wrapper .action.showcart:before {
+    color: #efefef !important;
 }
 
-@media (max-width: 768px) {
-    .column {
-        grid-template-columns: 1fr;
+.page-layout-3columns {
+    .columns {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+
+    .column.main {
+        flex: 2;
+        order: 2;
+    }
+
+    .sidebar-main {
+        flex: 1;
+        order: 1;
+    }
+
+    .sidebar-additional {
+        flex: 1;
+        order: 3;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .column {
-        grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+    .page-layout-3columns .columns {
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 }

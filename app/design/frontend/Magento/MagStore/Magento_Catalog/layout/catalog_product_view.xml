@@ -2,16 +2,59 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="product.info.type"
-            destination="product.info.form.options"
-            before="-"
-        />
+        <referenceContainer name="content">
+            <container name="product.wrapper.custom" htmlTag="div"
+                htmlClass="product-wrapper-custom-class" before="-" />
+
+            <container name="product.wrapper.custom.component.for.style" htmlTag="div"
+                htmlClass="product-wrapper-custom-class-for-style" before="-" />
+        </referenceContainer>
+
+        <referenceContainer name="product.wrapper.custom">
+            <block class="Magento\Framework\View\Element\Template"
+                name="tab.for.product.info.block"
+                template="MagStore_Tabs::tab-for-product-page.phtml"
+                after="product.info.sku">
+
+                <block class="Magento\Framework\View\Element\Template"
+                    name="vika.carousel2.file.block"
+                    as="slider2.content"
+                    template="MagStore_ProductFeatures::carousel.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">
+                            MagStore\ProductFeatures\ViewModel\SliderProducts</argument>
+                        <argument name="css_class" xsi:type="string">modal-slider-view</argument>
+                        <argument name="slider_config" xsi:type="array">
+                            <item name="slidesToShow" xsi:type="number">1</item>
+                            <item name="autoplay" xsi:type="boolean">false</item>
+                            <item name="arrows" xsi:type="boolean">false</item>
+                            <item name="dots" xsi:type="boolean">true</item>
+
+                        </argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <move element="page.main.title" destination="product.wrapper.custom" before="-" />
+        <move element="product.info.type" destination="product.wrapper.custom"
+            after="page.main.title" />
+        <move element="product.info.sku" destination="product.wrapper.custom"
+            after="product.info.type" />
+
+        <move element="product.info.media" destination="product.wrapper.custom"
+            after="tab.for.product.info.block" />
+
+        <move element="product.wrapper.custom"
+            destination="product.wrapper.custom.component.for.style" before="-" />
+        <move element="product.info.main" destination="product.wrapper.custom.component.for.style"
+            before="product.wrapper.custom" />
+
         <referenceBlock name="product.info.description">
             <arguments>
                 <argument name="title" translate="true" xsi:type="string">More details</argument>
             </arguments>
         </referenceBlock>
-
         <referenceBlock name="product.attributes">
             <arguments>
                 <argument name="title" translate="true" xsi:type="string">Characteristics</argument>

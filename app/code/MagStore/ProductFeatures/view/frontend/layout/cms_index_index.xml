@@ -3,15 +3,19 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template"
-                name="vika.carousel.file.block"
-                template="MagStore_ProductFeatures::carousel.phtml"
-                before="vika.main.text.block">
+
+            <block class="Magento\Framework\View\Element\Template" name="vika.carousel.file.block"
+                template="MagStore_ProductFeatures::carousel.phtml">
                 <arguments>
                     <argument name="view_model" xsi:type="object">
                         MagStore\ProductFeatures\ViewModel\SliderProducts</argument>
-                    <argument name="review_view_model" xsi:type="object">
-                        MagStore\ProductFeatures\ViewModel\ReviewSummary</argument>
+                    <argument name="css_class" xsi:type="string">tab-slider-view</argument>
+                    <argument name="slider_config" xsi:type="array">
+                        <item name="slidesToShow" xsi:type="number">3</item>
+                        <item name="dots" xsi:type="boolean">true</item>
+                        <item name="autoplay" xsi:type="boolean">false</item>
+                        <item name="arrows" xsi:type="boolean">false</item>
+                    </argument>
                 </arguments>
             </block>
         </referenceContainer>

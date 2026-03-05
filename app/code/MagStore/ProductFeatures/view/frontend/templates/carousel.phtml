@@ -6,12 +6,23 @@
 $viewModel = $block->getData('view_model');
 $products = $viewModel->getCarouselProducts();
 
-if (empty($products)): return;
-endif;
+if (empty($products)) return;
+
+$sliderConfig = $block->getData('slider_config') ?: [
+    'slidesToShow' => 2,
+    'slidesToScroll' => 1,
+    'dots' => true,
+    'infinite' => true,
+    'arrows' => false
+];
+
+$cssClass = $block->getData('css_class') ?: 'default-slider';
+
+$uniqueId = 'slider_' . uniqid();
 ?>
 
-<div class="carousel-container">
-    <div id="carousel_test" class="carousel-test-list">
+<div class="carousel-container <?= $block->escapeHtmlAttr($cssClass) ?>">
+    <div id="<?= $uniqueId ?>" class="carousel-test-list">
         <?php foreach ($products as $product): ?>
             <div class="item product-item">
                 <a href="<?= $block->escapeUrl($product->getProductUrl()) ?>" class="product-link">
@@ -21,7 +32,7 @@ endif;
 
                     <div class="carousel-description">
                         <strong class="product-name"><?= $block->escapeHtml($product->getName()) ?></strong>
-                        <span class="price"><?= /* @noEscape */ $product->getFormatedPrice() ?></span>
+                        <span class="price"><?= $product->getFormatedPrice() ?></span>
                     </div>
                 </a>
             </div>
@@ -31,19 +42,8 @@ endif;
 
 <script type="text/x-magento-init">
     {
-    "#carousel_test": {
-        "carousel_test": {
-            "slidesToShow": 2,
-            "slidesToScroll": 1,
-            "dots": true,
-            "infinite": true,
-            "autoplay": true,
-            "arrows": false,
-            "responsive": [
-                { "breakpoint": 1024, "settings": { "slidesToShow": 2 } },
-                { "breakpoint": 768, "settings": { "slidesToShow": 2 } }
-            ]
-        }
+    "#<?= $uniqueId ?>": {
+        "carousel_test": <?= json_encode($sliderConfig) ?>
     }
 }
 </script>

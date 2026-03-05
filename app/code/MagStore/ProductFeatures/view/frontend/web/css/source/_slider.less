@@ -1,6 +1,5 @@
 .carousel-container {
-    // max-width: 1200px;
-    max-width: 375px;
+    max-width: 50rem;
     margin: 0 auto;
 
     .slick-slider {
@@ -84,5 +83,36 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+}
+
+&.modal-slider-view {
+    background-color: @white;
+    .slick-slider {
+        background-color: @white;
+    }
+    .carousel-test-list {
+        box-shadow: none;
+    }
+    .product-name {
+        display: none;
+    }
+    .price {
+        display: none;
+    }
+    .slick-dots {
+        padding: 5px;
+    }
+    .slick-slider {
+        padding: 0;
+    }
+    .product-item {
+        padding: 0;
+        background-color: @white;
+        border: none;
+        box-shadow: none;
+    }
+    .carousel-test-list {
+        margin: 0;
     }
 }

@@ -31,6 +31,14 @@
 //
 //  Common
 //  _____________________________________________
+
+.product-wrapper-custom-class-for-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 .price-container {
     .price-from-label {
         color: #333;
@@ -47,7 +55,10 @@
 }
 .page-title-wrapper {
     .page-title {
-        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.42;
+        margin-bottom: 3rem;
     }
 }
 & when (@media-common = true) {
@@ -702,27 +713,6 @@
     .product.media {
         float: left;
         margin-bottom: @indent__m;
-    }
-
-    .page-layout-1column {
-        .product-info-main {
-            width: 40%;
-        }
-        .product.media {
-            width: 57%;
-        }
-    }
-
-    .page-layout-2columns-left,
-    .page-layout-2columns-right,
-    .page-layout-3columns {
-        .product-info-main {
-            width: 48%;
-        }
-
-        .product.media {
-            width: 50%;
-        }
     }
 }
 

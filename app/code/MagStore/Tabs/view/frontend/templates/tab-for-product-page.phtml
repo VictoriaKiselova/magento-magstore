@@ -1,0 +1,69 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+
+<div id="product-tab-product"
+    class="product data items custom-tabs-wrapper"
+    data-mage-init='{
+        "tabs": {
+            "openedState": "active",
+            "collapsible": true,
+            "active": false,
+            "animate": {"duration": 200}
+        }
+     }'>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-second-content">
+            <?= __('Tab') ?>
+        </a>
+    </div>
+
+    <div id="tab-second-content" class="item content" data-role="content">
+
+        <button type="button" class="open-slider-modal">
+            <span><?= __('Click Here') ?></span>
+        </button>
+
+        <div id="slider-modal" style="display:none">
+
+            <div class="modal-content">
+                <?= $block->getChildHtml('slider2.content') ?>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/modal',
+        'mage/tabs'
+    ], function($, modal) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
+            title: 'Slider',
+            buttons: [{
+                text: $.mage.__('Close'),
+                class: 'action secondary',
+                click: function() {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#slider-modal'));
+
+        $('.open-slider-modal').on('click', function() {
+            $('#slider-modal').modal('openModal');
+        });
+
+    });
+</script>

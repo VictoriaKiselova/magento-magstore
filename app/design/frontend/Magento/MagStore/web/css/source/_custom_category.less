@@ -1,10 +1,10 @@
-.product-wrapper-custom-class-for-style {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
+// .product-wrapper-custom-class-for-style {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     flex-wrap: wrap;
+//     gap: 2rem;
+// }
 .price-container {
     .price-from-label {
         color: #333;
@@ -25,6 +25,12 @@
         font-weight: 500;
         line-height: 1.42;
         margin-bottom: 3rem;
+    }
+}
+
+@media all and (min-width: @screen__xxs) and (max-width: @screen__xs_max_mob) {
+    .product-wrapper-custom-class {
+        margin-bottom: 2.4rem;
     }
 }
 

@@ -10,7 +10,7 @@
                 htmlClass="product-wrapper-custom-class-for-style" before="-" />
         </referenceContainer>
 
-        <referenceContainer name="product.wrapper.custom">
+        <!-- <referenceContainer name="product.wrapper.custom">
             <block class="Magento\Framework\View\Element\Template"
                 name="tab.for.product.info.block"
                 template="MagStore_Tabs::tab-for-product-page.phtml"
@@ -34,13 +34,13 @@
                     </arguments>
                 </block>
             </block>
-        </referenceContainer>
+        </referenceContainer> -->
 
-        <move element="page.main.title" destination="product.wrapper.custom" before="-" />
-        <move element="product.info.type" destination="product.wrapper.custom"
-            after="page.main.title" />
-        <move element="product.info.sku" destination="product.wrapper.custom"
-            after="product.info.type" />
+        <!-- <move element="page.main.title" destination="product.wrapper.custom" before="-" /> -->
+        <!-- <move element="product.info.type" destination="product.wrapper.custom"
+            after="page.main.title" /> -->
+        <!-- <move element="product.info.sku" destination="product.wrapper.custom"
+            after="product.info.type" /> -->
 
         <move element="product.info.media" destination="product.wrapper.custom"
             after="tab.for.product.info.block" />

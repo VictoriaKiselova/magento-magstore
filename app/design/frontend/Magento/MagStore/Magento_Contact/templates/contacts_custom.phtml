@@ -1,0 +1,22 @@
+<?php
+$phones = [
+    ['label' => 'Client service', 'phone' => '1 312-239-0843'],
+    ['label' => 'Support team', 'phone' => '+38 (044) 362-12-09'],
+    ['label' => 'Department of Human Resources', 'phone' => '+38 (093) 445-48-87']
+];
+?>
+
+<div>
+    <img src="<?= $block->getViewFileUrl('images/perspective.png'); ?>" id="perspective_img" alt="perspective" class="perspective_img">
+    <h2 class="contacts_title"><?= $escaper->escapeHtml(__('Phones')) ?></h2>
+    <ul class="contacts_list">
+        <?php foreach ($phones as $phone): ?>
+            <li class="contacts_list_item">
+                <p class="contacts_list_title"><?= $escaper->escapeHtml($phone['label']) ?></p>
+                <a class="contacts_list_link" href="tel:<?= $escaper->escapeHtml($phone['phone']) ?>">
+                    <?= $escaper->escapeHtml($phone['phone']) ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

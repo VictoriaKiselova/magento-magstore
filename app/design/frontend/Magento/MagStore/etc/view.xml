@@ -3,6 +3,11 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
     <media>
         <images module="Magento_Catalog">
+
+            <image id="perspective_img">
+                <width>176</width>
+                <height>100</height>
+            </image>
             <image id="bundled_product_customization_page" type="thumbnail">
                 <width>140</width>
                 <height>140</height>

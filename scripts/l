@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -rf pub/static/frontend/*
+rm -rf var/view_preprocessed/*
+php bin/magento cache:flush
+php bin/magento setup:static-content:deploy -f

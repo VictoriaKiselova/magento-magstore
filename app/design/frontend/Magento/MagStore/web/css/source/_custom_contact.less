@@ -1,0 +1,130 @@
+.page-main {
+    padding-bottom: 2.3rem;
+}
+.page-layout-3columns {
+    .nav-sections {
+        margin-bottom: 1rem;
+    }
+    .columns {
+        justify-content: flex-start;
+        gap: 0 !important;
+        flex: 1;
+    }
+    .column.main {
+        flex: 1 !important;
+        padding-top: 136px;
+    }
+    .sidebar-additional {
+        padding: 0;
+        flex: 2 !important;
+    }
+    columns > *:not(:last-child) {
+        margin-right: 4rem;
+    }
+    .base {
+        text-transform: uppercase;
+        font-size: 3.2rem;
+        color: @font-black;
+    }
+    .page-main > .page-title-wrapper .page-title {
+        margin-bottom: 1.8rem;
+        color: @font-black;
+    }
+    .perspective_img {
+        margin-bottom: 32px;
+        width: 176px;
+        height: 100px;
+    }
+    .contacts_title {
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: @font-black;
+        padding-left: 3.6rem;
+    }
+    .contacts_list {
+        list-style-type: none;
+    }
+    .contacts_list_item {
+        margin-bottom: 2rem;
+    }
+    .contacts_list_title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: @font-black-light;
+        margin-bottom: 0.8rem;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+    }
+    .contacts_list_link {
+        color: @gray-light;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+    }
+    .is-disabled {
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        color: @gray-disabled;
+    }
+    .contacts-form {
+        position: relative;
+        padding: 10rem 10rem 10rem 5rem;
+        background-color: @gray-bg;
+        border-radius: 0.2rem;
+
+        .contacts-form-title {
+            text-transform: uppercase;
+            letter-spacing: 0;
+            margin-bottom: 6.2rem;
+        }
+        .contacts-form-input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: text;
+            border-bottom: 1px solid @font-black;
+            padding: 0.4rem;
+        }
+        .contacts-form-input::placeholder {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-left: 0.6rem;
+        }
+        .contacts-form-input:focus {
+            outline: none;
+            border: none;
+            border-bottom: 0.1rem solid @dark-black;
+        }
+        .contacts-form-input:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+        .contacts-form-button {
+            position: absolute;
+            bottom: 1.3rem;
+            right: 0;
+            padding: 1.2rem 3rem;
+            border: none;
+            outline: none;
+            background-color: @blue-bg;
+            color: @white;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            border-radius: 0;
+            transition: background-color 0.3s;
+        }
+        .contacts-form-button:hover {
+            background-color: @color-blue-text;
+        }
+        .contacts-form-input::placeholder {
+            margin-left: -0.4rem;
+        }
+        .contacts-message {
+            height: 8rem;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 0.4rem;
+            resize: none;
+        }
+    }
+}

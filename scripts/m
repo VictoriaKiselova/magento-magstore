@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -rf pub/static/*
+rm -rf var/view_preprocessed/*
+bin/magento setup:static-content:deploy --area frontend -f en_US --theme MagStore -j 16

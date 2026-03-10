@@ -1,0 +1,37 @@
+<?php
+$departments = [
+    [
+        'label' => 'Client sevice department',
+        'email' => 'order@perspective.net.ua'
+    ],
+    [
+        'label' => 'Support department',
+        'email' => 'support@perspective.net.ua'
+    ],
+    [
+        'label' => 'Quality control department',
+        'email' => 'qualitycheck@perspective.net.ua'
+    ]
+];
+
+$lastIndex = count($departments) - 1;
+?>
+
+<div class="contact-department">
+    <h2 class="contacts_title"><?= $escaper->escapeHtml(__('Emails')) ?></h2>
+
+    <ul class="contacts_list">
+        <?php foreach ($departments as $key => $department): ?>
+            <li class="contacts_list_item">
+                <p class="contacts_list_title">
+                    <?= $escaper->escapeHtml($department['label']) ?>
+                </p>
+                <a
+                    class="contacts_list_link <?= $key === $lastIndex ? 'is-disabled' : '' ?>"
+                    href="<?= $key === $lastIndex ? '#' : 'mailto:' . $escaper->escapeHtmlAttr($department['email']) ?>">
+                    <?= $escaper->escapeHtml($department['email']) ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

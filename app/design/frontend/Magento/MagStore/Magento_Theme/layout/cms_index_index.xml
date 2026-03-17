@@ -2,16 +2,7 @@
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="tabs-block" destination="sidebar.main" before="-" />
-
-        <referenceBlock name="category.description" remove="true" />
-
-        <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template"
-                name="my.custom.about.us"
-                template="Magento_Theme::about_us.phtml" />
-        </referenceContainer>
-
         <move element="about-us-block" destination="sidebar.additional" before="-" />
+        <move element="tabs-block" destination="sidebar.main" before="-" />
     </body>
 </page>

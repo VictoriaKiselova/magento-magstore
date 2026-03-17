@@ -378,6 +378,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
         'MagStore_CmsElements' => 1,
+        'MagStore_ContactsForm' => 1,
         'MagStore_ProductFeatures' => 1,
         'MagStore_Tabs' => 1,
         'MarkShust_LayoutHandleLogger' => 1,

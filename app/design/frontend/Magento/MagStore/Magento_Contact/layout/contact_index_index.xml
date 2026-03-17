@@ -5,11 +5,6 @@
         <title>Contacts</title>
     </head>
     <body>
-        <referenceBlock name="category.description" remove="true" />
-        <!-- <referenceContainer name="sidebar.main" remove="true"> -->
-        <!-- </referenceContainer> -->
-        <!-- <referenceContainer name="sidebar.additional" remove="true">
-        </referenceContainer> -->
         <referenceBlock name="catalog.compare.sidebar" remove="true" />
         <referenceBlock name="wishlist_sidebar" remove="true" />
 
@@ -23,22 +18,13 @@
             <block class="Magento\Framework\View\Element\Template"
                 name="contacts-department-email"
                 template="Magento_Contact::contacts_our_email.phtml" before="-" />
+
         </referenceContainer>
 
         <referenceContainer name="sidebar.additional">
-            <block class="Magento\Framework\View\Element\Template"
-                name="write_us_form"
-                template="Magento_Contact::write_us_form.phtml" before="-" />
+            <block class="Magento\Contact\Block\ContactForm"
+                name="contactForm"
+                template="Magento_Contact::write_us_form.phtml" />
         </referenceContainer>
-
-        <!-- <referenceBlock name="contactForm">
-            <arguments>
-                <argument name="my_new_custom_text_for_contacts" xsi:type="string">Have questions
-                    about your order? Just email us your order number below.</argument>
-
-                <argument name="button_lock_manager" xsi:type="object">
-                    Magento\Framework\View\Element\ButtonLockManager</argument>
-            </arguments>
-        </referenceBlock> -->
     </body>
 </page>

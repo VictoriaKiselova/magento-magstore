@@ -1,0 +1,132 @@
+<!--@subject Contact Form @-->
+
+<!--@vars {
+"var data.name":"Name",
+"var data.telephone":"Telephone",
+"var data.email":"Email",
+"var data.comment":"Comment",
+"var data.customer_status":"Customer ID",
+"var date":"Date"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+<div style="background-color: #ffffff">
+    <table class="message-details" style="margin-bottom: 20px">
+        <tr>
+            <td style="padding: 4px">
+                <strong
+                    style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+                    >{{trans "From:"}}</strong
+                >
+            </td>
+            <td style="padding: 4px">
+                <a
+                    href="mailto:{{config path='trans_email/ident_support/email'}}"
+                >
+                    {{config path='trans_email/ident_support/email'}}
+                </a>
+                [<a
+                    href="mailto:{{config path='trans_email/ident_support/email'}}"
+                    >mailto:{{config path='trans_email/ident_support/email'}}</a
+                >]
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4px">
+                <strong
+                    style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+                    >{{trans "Sent:"}}</strong
+                >
+            </td>
+            <td style="padding: 4px">
+                <strong
+                    style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+                    >{{var date}}</strong
+                >
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4px">
+                <strong
+                    style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+                    >{{trans "To:"}}</strong
+                >
+            </td>
+            <td style="padding: 4px">
+                <strong
+                    style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+                    >{{config path="trans_email/ident_support/name"}}
+                    <a
+                        href="mailto:{{config path='trans_email/ident_support/email'}}"
+                    >
+                        {{config path='trans_email/ident_support/email'}}
+                    </a></strong
+                >
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4px">
+                <strong
+                    style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+                    >{{trans "Subject:"}}</strong
+                >
+            </td>
+            <td style="padding: 4px">
+                <strong
+                    style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+                    >{{var data.comment}}
+                </strong>
+            </td>
+        </tr>
+    </table>
+    <span style="padding-right: 10px"
+        ><strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >Ім'я:</strong
+        >
+        <strong style="font-size: 14px; font-weight: 400; color: #2e2d2d">
+            {{var data.name}}</strong
+        >
+    </span>
+    <span style="padding-right: 10px"
+        ><strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >Номер телефону:</strong
+        >
+        <strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >{{var data.telephone}}</strong
+        >
+    </span>
+    <span style="padding-right: 10px"
+        ><strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >Email:</strong
+        >
+        <strong style="font-size: 14px; font-weight: 400"
+            >{{var data.email}}</strong
+        >
+    </span>
+    <span style="padding-right: 10px"
+        ><strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >Тематика:</strong
+        >
+        <strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >{{var data.comment}}</strong
+        >
+    </span>
+    <span style="padding-right: 10px"
+        ><strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >Адреса сторінки:</strong
+        >
+        <a href="{{config path='web/unsecure/base_url'}}"
+            >{{config path='web/unsecure/base_url'}}</a
+        >
+    </span>
+    <span style="font-size: 16px; font-weight: 400; color: #2e2d2d"
+        ><strong style="font-size: 14px; font-weight: 400; color: #2e2d2d"
+            >CLIENT_ID:</strong
+        >
+        <strong style="font-size: 14px; font-weight: 400; color: #2e2d2d">
+            {{var data.customer_status}}</strong
+        >
+    </span>
+</div>
+
+{{template config_path="design/email/footer_template"}}

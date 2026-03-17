@@ -86,10 +86,10 @@
             border-bottom: 1px solid @font-black;
             padding: 0.4rem;
         }
-        .contacts-form-input::placeholder {
+        .label-form-contacts {
             font-size: 1.2rem;
+            font-weight: 400;
             text-transform: uppercase;
-            margin-left: 0.6rem;
         }
         .contacts-form-input:focus {
             outline: none;
@@ -113,18 +113,12 @@
             border-radius: 0;
             transition: background-color 0.3s;
         }
+        .actions-toolbar .primary .action {
+            margin: 0;
+        }
+
         .contacts-form-button:hover {
             background-color: @color-blue-text;
-        }
-        .contacts-form-input::placeholder {
-            margin-left: -0.4rem;
-        }
-        .contacts-message {
-            height: 8rem;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            padding: 0.4rem;
-            resize: none;
         }
     }
 }

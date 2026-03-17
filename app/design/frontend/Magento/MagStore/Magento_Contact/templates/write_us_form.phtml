@@ -2,7 +2,7 @@
     data-mage-init='{"validation":{}}'
     class="contacts-form"
     method="post"
-    action="<?= $escaper->escapeUrl($block->getUrl('contact/index/post')) ?>">
+    action="<?= $escaper->escapeUrl($block->getUrl('magstore/index/post')) ?>">
 
     <?= $block->getBlockHtml('formkey') ?>
 
@@ -10,15 +10,15 @@
         <?= $escaper->escapeHtml(__('Write us')) ?>
     </h2>
 
-    <input name="username"
-        id="username"
+    <input name="name"
+        id="name"
         type="text"
         placeholder="<?= $escaper->escapeHtmlAttr(__('Name')) ?>"
         class="contacts-form-input"
         data-validate='{"required":true, "max_text_length":15}' />
 
-    <input name="phone"
-        id="phone"
+    <input name="telephone"
+        id="telephone"
         type="text"
         placeholder="<?= $escaper->escapeHtmlAttr(__('Phone')) ?>"
         class="contacts-form-input"
@@ -31,13 +31,17 @@
         class="contacts-form-input"
         data-validate='{"required":true, "validate-email":true}' />
 
-    <textarea name="message"
-        placeholder="<?= $escaper->escapeHtmlAttr(__('Message')) ?>"
-        class="contacts-form-input contacts-message"
-        data-validate='{"required":true}'></textarea>
+    <select name="comment"
+        class="contacts-form-input"
+        data-validate='{"required":true}'>
+        <option value="Замовлення зворотнього дзвінка"><?= $escaper->escapeHtmlAttr(__('Замовлення зворотнього дзвінка')) ?></option>
+        <option value="Консультація"><?= $escaper->escapeHtmlAttr(__('Консультація')) ?></option>
+        <option value="Інше"><?= $escaper->escapeHtmlAttr(__('Інше')) ?></option>
+
+    </select>
 
     <button type="submit" class="contacts-form-button">
-        <?= $escaper->escapeHtml(__('Send')) ?>
+        <?= $escaper->escapeHtml(__('Sent')) ?>
     </button>
 
 </form>

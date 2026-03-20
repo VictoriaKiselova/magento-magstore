@@ -1,0 +1,19 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Customer\Model\Data\Customer $formData */
+$formData = $block->getData('form_data');
+?>
+
+<div class="field required">
+    <label for="age" class="label">
+    </label>
+    <div class="control">
+        <input type="number"
+            name="age"
+            value="<?= ($formData instanceof \Magento\Framework\DataObject) ? $block->escapeHtmlAttr($formData->getData('age')) : '' ?>" class="input-text"
+            id="age"
+            placeholder="<?= $block->escapeHtmlAttr(__('Вік')) ?>"
+            data-validate='{"required":true, "numberVal":true}'>
+    </div>
+</div>

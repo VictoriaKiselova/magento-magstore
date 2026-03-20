@@ -1,0 +1,19 @@
+<?php
+
+/** @var \Magento\Customer\Block\Widget\Telephone $block */ ?>
+<div class="field telephone required custom-placeholder-wrapper">
+    <div class="control">
+        <input type="tel"
+            name="telephone"
+            id="telephone"
+            value="<?= $block->escapeHtmlAttr($block->getTelephone()) ?>"
+            class="input-text required-entry"
+            data-validate='{"required":true, "validate-ukraine-phone":true}'
+            placeholder=" ">
+
+        <label for="telephone" class="custom-placeholder">
+            <span class="label-text">Номер телефону</span>
+            <span class="label-mask label-error-tel">+38(0XX) XXX-XX-XX</span>
+        </label>
+    </div>
+</div>

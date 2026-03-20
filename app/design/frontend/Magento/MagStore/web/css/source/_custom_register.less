@@ -1,0 +1,114 @@
+.page-layout-1column .column.main {
+    .form.create.account {
+        min-width: 288px;
+        width: 288px;
+    }
+    .actions-toolbar .primary,
+    .actions-toolbar .secondary {
+        width: 100%;
+    }
+    .control {
+        position: relative;
+    }
+    .actions-toolbar .primary .action.primary {
+        background: @red-bg;
+        border: none;
+        outline: none;
+        display: block;
+        margin-bottom: 0.6rem;
+    }
+    .input-text::placeholder {
+        margin-top: 0;
+        color: @gray-light !important;
+        opacity: 1 !important;
+        font-size: 1.2rem;
+        &:focus ~ .custom-placeholder {
+            .label-text {
+                color: @dark-black;
+            }
+            .label-mask {
+                opacity: 0.5;
+            }
+        }
+    }
+    .input-text:active {
+        border: none;
+        outline: none;
+    }
+    .fieldset > .field > .label,
+    .fieldset > .fields > .field > .label {
+        display: none;
+    }
+    .telephone {
+        position: relative;
+        .custom-placeholder {
+            position: absolute;
+            top: -0.4rem;
+            left: 9px;
+            pointer-events: none;
+            .label-text {
+                display: block;
+                color: @gray-light;
+                font-size: 1rem;
+            }
+            .label-mask {
+                display: inline-block;
+                font-size: 1.2rem;
+                color: @font-black;
+                line-height: 1.42;
+            }
+            .mage-error {
+                position: absolute;
+                top: 100%;
+                left: 9px;
+                font-size: 1.1rem;
+                margin-top: 2px;
+                font-weight: normal !important;
+            }
+        }
+        .input-text:focus + .custom-placeholder,
+        .input-text:not(:placeholder-shown) + .custom-placeholder {
+            display: none;
+        }
+    }
+    .button-login {
+        background-color: transparent;
+        color: @dark-black;
+        font-size: 1.4rem;
+        border: none;
+        outline: none;
+        font-weight: 400;
+    }
+    .mage-error {
+        display: block;
+        font-size: 1.1rem;
+        margin-top: 2px;
+        font-weight: normal !important;
+    }
+    .input-text {
+        border: none;
+        border-bottom: 0.2rem solid @warm-shadow;
+
+        #telephone {
+            &::placeholder {
+                color: @dark-black;
+                font-size: 1.4rem;
+                display: inline-block;
+            }
+        }
+        &.mage-error {
+            border-bottom: 0.2rem solid @red-bg;
+        }
+        &:focus ~ .custom-placeholder {
+            opacity: 0.3;
+        }
+
+        &:not(:placeholder-shown) ~ .custom-placeholder {
+            display: none;
+        }
+
+        &.mage-error ~ .custom-placeholder {
+            display: none;
+        }
+    }
+}

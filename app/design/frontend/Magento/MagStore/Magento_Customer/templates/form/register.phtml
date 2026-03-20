@@ -1,0 +1,47 @@
+<?php
+
+/** @var \Magento\Customer\Block\Form\Register $block */
+/** @var \Magento\Framework\Escaper $escaper */
+$formData = $block->getFormData();
+?>
+
+<form class="form create account form-create-account"
+    action="<?= $escaper->escapeUrl($block->getPostActionUrl()) ?>"
+    method="post" id="form-validate" enctype="multipart/form-data"
+    autocomplete="off" data-mage-init='{"validation": {}}'>
+
+    <?= $block->getBlockHtml('formkey') ?>
+
+    <fieldset class="fieldset create info">
+        <input type="hidden" name="success_url" value="<?= $escaper->escapeUrl($block->getSuccessUrl()) ?>">
+        <input type="hidden" name="error_url" value="<?= $escaper->escapeUrl($block->getErrorUrl()) ?>">
+
+        <?= $block->getLayout()->createBlock(\Magento\Customer\Block\Widget\Name::class)
+            ->setObject($formData)
+            ->setForceUseCustomerAttributes(true)
+            ->toHtml() ?>
+
+        <?= $block->getLayout()->createBlock(\Magento\Customer\Block\Widget\Telephone::class)
+            ->setData('telephone', $formData->getTelephone())
+            ->toHtml() ?>
+
+        <?= $block->getLayout()->createBlock(\Magento\Framework\View\Element\Template::class)
+            ->setTemplate('Magento_Customer::widget/age.phtml')
+            ->setData('form_data', $formData)
+            ->toHtml() ?>
+
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?= $escaper->escapeHtmlAttr(__('Далі')) ?>">
+                <span><?= $escaper->escapeHtml(__('Далі')) ?></span>
+            </button>
+        </div>
+        <div class="login">
+            <button type="submit" class="action submit primary button-login" title="<?= $escaper->escapeHtmlAttr(__('Увійти')) ?>">
+                <span><?= $escaper->escapeHtml(__('Увійти')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>

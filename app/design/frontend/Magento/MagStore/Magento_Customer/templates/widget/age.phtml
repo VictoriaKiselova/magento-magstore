@@ -11,7 +11,7 @@ $formData = $block->getData('form_data');
     <div class="control">
         <input type="number"
             name="age"
-            value="<?= ($formData instanceof \Magento\Framework\DataObject) ? $block->escapeHtmlAttr($formData->getData('age')) : '' ?>" class="input-text"
+            value="<?= ($formData instanceof \Magento\Framework\DataObject) ? $block->escapeHtmlAttr($formData->getData('age')) : '' ?>" class="input-text input-text-form-reg"
             id="age"
             placeholder="<?= $block->escapeHtmlAttr(__('Вік')) ?>"
             data-validate='{"required":true, "numberVal":true}'>

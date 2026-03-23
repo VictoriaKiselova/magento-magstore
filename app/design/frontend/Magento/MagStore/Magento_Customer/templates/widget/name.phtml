@@ -8,7 +8,7 @@
             id="<?= $block->escapeHtmlAttr($block->getFieldId('firstname')) ?>"
             name="<?= $block->escapeHtmlAttr($block->getFieldName('firstname')) ?>"
             value="<?= $block->escapeHtmlAttr($block->getObject()->getFirstname()) ?>"
-            class="input-text required-entry"
+            class="input-text required-entry input-text-form-reg"
             data-validate='{"required":true, "cyrillicVal":true}'
             placeholder="<?= $block->escapeHtmlAttr(__("Ім'я")) ?>">
     </div>
@@ -20,7 +20,7 @@
             id="<?= $block->escapeHtmlAttr($block->getFieldId('lastname')) ?>"
             name="<?= $block->escapeHtmlAttr($block->getFieldName('lastname')) ?>"
             value="<?= $block->escapeHtmlAttr($block->getObject()->getLastname()) ?>"
-            class="input-text required-entry"
+            class="input-text required-entry input-text-form-reg"
             data-validate='{"required":true, "cyrillicVal":true}'
             placeholder="<?= $block->escapeHtmlAttr(__("Прізвище")) ?>">
     </div>

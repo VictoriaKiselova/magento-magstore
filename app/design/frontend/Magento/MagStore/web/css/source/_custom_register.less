@@ -17,7 +17,7 @@
         display: block;
         margin-bottom: 0.6rem;
     }
-    .input-text::placeholder {
+    .input-text-form-reg::placeholder {
         margin-top: 0;
         color: @gray-light !important;
         opacity: 1 !important;
@@ -31,13 +31,9 @@
             }
         }
     }
-    .input-text:active {
+    .input-text-form-reg:active {
         border: none;
         outline: none;
-    }
-    .fieldset > .field > .label,
-    .fieldset > .fields > .field > .label {
-        display: none;
     }
     .telephone {
         position: relative;
@@ -66,8 +62,8 @@
                 font-weight: normal !important;
             }
         }
-        .input-text:focus + .custom-placeholder,
-        .input-text:not(:placeholder-shown) + .custom-placeholder {
+        .input-text-form-reg:focus + .custom-placeholder,
+        .input-text-form-reg:not(:placeholder-shown) + .custom-placeholder {
             display: none;
         }
     }
@@ -85,7 +81,7 @@
         margin-top: 2px;
         font-weight: normal !important;
     }
-    .input-text {
+    .input-text-form-reg {
         border: none;
         border-bottom: 0.2rem solid @warm-shadow;
 

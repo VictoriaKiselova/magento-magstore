@@ -22,33 +22,30 @@
 .minicart-wrapper .action.showcart:before {
     color: #efefef !important;
 }
-
 .page-layout-3columns {
     .columns {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 20px;
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px !important;
     }
-
     .column.main {
-        flex: 2;
+        flex: 2 !important;
         order: 2;
+        padding: 0;
     }
-
     .sidebar-main {
-        flex: 1;
+         width: 343px !important;
+        flex: none;
         order: 1;
     }
-
     .sidebar-additional {
         flex: 1;
         order: 3;
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .page-layout-3columns .columns {
-        flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
     }
 }

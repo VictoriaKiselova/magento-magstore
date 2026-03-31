@@ -1,3 +1,5 @@
+@import "_payment-options";
+
 @toolbar-background: transparent;
 
 .media-width(@extremum, @break)
@@ -70,5 +72,31 @@
 .page-main {
     .sidebar-main {
         padding: 0;
+    }
+}
+.checkout-index-index {
+    .shipping-address-note {
+        .field-note {
+            color: @orange-text;
+            font-weight: 500;
+            padding-top: 4px;
+        }
+    }
+}
+.checkout-index-index {
+    #newstep {
+        .second-step-next-button {
+            padding: 14px 17px;
+        }
+        .actions-toolbar {
+            > .primary {
+                float: right;
+            }
+            .action {
+                &.primary {
+                    margin: 0;
+                }
+            }
+        }
     }
 }

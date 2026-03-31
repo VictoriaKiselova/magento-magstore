@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_cart_collect_items_and_amounts">
+        <observer
+            name="magstore_extension_add_custom_fee_to_payment_cart"
+            instance="MagStore\Extension\Observer\AddCustomFeeToPaymentCart" />
+    </event>
+</config>

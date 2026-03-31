@@ -4,12 +4,12 @@
 /** @var \Magento\Framework\Escaper $escaper */
 ?>
 
-<div id="custom-tabs" class="product data items" name="custom-tabs"
+<div id="custom-tabs" class="product data items custom-tabs-item" name="custom-tabs"
     data-mage-init='{
         "tabs": {
             "openedState": "active",
             "collapsible": true,
-            "active": 0,
+            "active": 1,
             "animate": {"duration": 200}
         },
         "tabsSliderfix": {}
@@ -20,16 +20,17 @@
             <?= $escaper->escapeHtml(__('Information')) ?>
         </a>
     </div>
+
     <div id="tab-popup" class="item content" data-role="content">
         <?= $block->getChildHtml('contact.content') ?>
     </div>
 
     <div class="item title" data-role="collapsible">
-        <a class="switch" data-toggle="trigger" href="#tab-slider">
+        <a class="switch" data-toggle="trigger" href="#tab-popup">
             <?= $escaper->escapeHtml(__('Slider')) ?>
         </a>
     </div>
-    <div id="tab-slider" class="item content" data-role="content" style="display:none;">
+    <div id="tab-slider" class="item content" data-role="content">
         <?= $block->getChildHtml('slider.content') ?>
     </div>
 </div>

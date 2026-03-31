@@ -1,4 +1,12 @@
 var config = {
+    paths: {
+        inputmask: "js/jquery.inputmask.bundle",
+    },
+    shim: {
+        inputmask: {
+            deps: ["jquery"],
+        },
+    },
     config: {
         mixins: {
             "mage/validation": {

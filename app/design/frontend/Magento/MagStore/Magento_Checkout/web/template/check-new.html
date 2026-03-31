@@ -1,0 +1,72 @@
+<!--Use 'stepCode' as id attribute-->
+<li data-bind="fadeVisible: isVisible, attr: { id: stepCode }">
+    <div class="step-title" data-bind="i18n: stepTitle" data-role="title"></div>
+    <div
+        id="checkout-step-title"
+        class="step-content delivery-option-master"
+        data-role="content"
+    >
+        <div class="fieldset">
+            <div class="custom-checkout-form-container">
+                <div class="field required choice-group">
+                    <label class="label">
+                        <span
+                            ><!-- ko i18n: 'Тип пакування:' --><!-- /ko --></span
+                        >
+                    </label>
+                    <div class="control">
+                        <div class="field choice">
+                            <input
+                                type="checkbox"
+                                class="checkbox"
+                                id="custom_checkout_packaging_type_standard"
+                                data-bind="checked: packagingTypeStandard, event: { change: onPackagingChange.bind($data) }"
+                            />
+                            <label
+                                class="label"
+                                for="custom_checkout_packaging_type_standard"
+                            >
+                                <span
+                                    ><!-- ko i18n: 'Стандарт' --><!-- /ko --></span
+                                >
+                            </label>
+                        </div>
+                        <div class="field choice">
+                            <input
+                                type="checkbox"
+                                class="checkbox"
+                                id="custom_checkout_packaging_type_gift"
+                                data-bind="checked: packagingTypeGift, event: { change: onPackagingChange.bind($data) }"
+                            />
+                            <label
+                                class="label"
+                                for="custom_checkout_packaging_type_gift"
+                            >
+                                <span
+                                    ><!-- ko i18n: 'Подарункова' --><!-- /ko --></span
+                                >
+                            </label>
+                        </div>
+                    </div>
+                    <!-- ko if: packagingTypeError -->
+                    <div class="message message-error error">
+                        <div data-bind="text: packagingTypeError"></div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button
+                    type="button"
+                    class="action primary continue second-step-next-button"
+                    data-bind="click: navigateToNextStep"
+                >
+                    <span data-bind="i18n: 'Next'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</li>

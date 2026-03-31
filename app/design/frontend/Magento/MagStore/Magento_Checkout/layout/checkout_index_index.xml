@@ -8,88 +8,175 @@
                     <item name="components" xsi:type="array">
                         <item name="checkout" xsi:type="array">
                             <item name="children" xsi:type="array">
-                                <item name="sidebar" xsi:type="array">
+
+                                <item name="steps" xsi:type="array">
                                     <item name="children" xsi:type="array">
-                                        <item name="summary" xsi:type="array">
+                                        <item name="check-login-step" xsi:type="array">
+                                            <item name="component" xsi:type="string">
+                                                Magento_Checkout/js/view/checkout-new-step</item>
+                                            <item name="sortOrder" xsi:type="string">2</item>
                                             <item name="children" xsi:type="array">
-                                                <item name="totals" xsi:type="array">
-                                                    <item name="sortOrder" xsi:type="string">99</item>
-                                                </item>
-                                                <item name="cart_items" xsi:type="array">
-                                                    <item name="sortOrder" xsi:type="string">0</item>
-                                                </item>
                                             </item>
                                         </item>
                                     </item>
                                 </item>
 
-                                <item name="steps" xsi:type="array">
+
+                                <item name="custom-sidebar" xsi:type="array">
+                                    <item name="component" xsi:type="string">
+                                        Magento_Checkout/js/view/sidebar</item>
+                                    <item name="displayArea" xsi:type="string">sidebar</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">
+                                            Magento_Checkout/custom-sidebar</item>
+                                        <item name="deps" xsi:type="array">
+                                            <item name="0" xsi:type="string">checkout.steps</item>
+                                        </item>
+                                    </item>
+
                                     <item name="children" xsi:type="array">
-                                        <item name="shipping-step" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
                                             <item name="children" xsi:type="array">
-                                                <item name="shippingAddress" xsi:type="array">
+                                                <item name="summary-discount"
+                                                    xsi:type="array">
+                                                    <item name="component" xsi:type="string">
+                                                        Magento_SalesRule/js/view/payment/discount</item>
                                                     <item name="children" xsi:type="array">
-                                                        <item name="customer-email" xsi:type="array">
-                                                            <item name="config" xsi:type="array">
-                                                                <item name="sortOrder"
-                                                                    xsi:type="string">60</item>
-                                                            </item>
+                                                        <item name="errors" xsi:type="array">
+                                                            <item name="sortOrder"
+                                                                xsi:type="string">0</item>
+                                                            <item name="component"
+                                                                xsi:type="string">
+                                                                Magento_SalesRule/js/view/payment/discount-messages</item>
+                                                            <item name="displayArea"
+                                                                xsi:type="string">messages</item>
                                                         </item>
+                                                    </item>
+                                                    <item name="totals" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">99</item>
+                                                    </item>
+                                                    <item name="cart_items" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">0</item>
+                                                    </item>
+                                                    <item name="componentDisabled"
+                                                        xsi:type="boolean">false</item>
+                                                </item>
+                                            </item>
+                                        </item>
 
 
-                                                        <item name="shipping-address-fieldset"
+                                        <item name="discount" xsi:type="array">
+                                            <item name="component" xsi:type="string">
+                                                Magento_SalesRule/js/view/payment/discount</item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="errors" xsi:type="array">
+                                                    <item name="sortOrder" xsi:type="string">0</item>
+                                                    <item name="component" xsi:type="string">
+                                                        Magento_SalesRule/js/view/payment/discount-messages</item>
+                                                    <item name="displayArea" xsi:type="string">
+                                                        messages</item>
+                                                </item>
+                                                <item name="captcha" xsi:type="array">
+                                                    <item name="component" xsi:type="string">
+                                                        Magento_SalesRule/js/view/payment/captcha</item>
+                                                    <item name="displayArea" xsi:type="string">
+                                                        captcha</item>
+                                                    <item name="formId" xsi:type="string">
+                                                        sales_rule_coupon_request</item>
+                                                    <item name="configSource" xsi:type="string">
+                                                        checkoutConfig</item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+
+                            <item name="steps" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="shipping-step" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="shippingAddress" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="customer-email"
+                                                        xsi:type="array">
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="sortOrder"
+                                                                xsi:type="string">60</item>
+                                                        </item>
+                                                    </item>
+
+                                                    <item name="shipping-address-fieldset"
+                                                        xsi:type="array">
+                                                        <item name="children"
                                                             xsi:type="array">
-                                                            <item name="children" xsi:type="array">
-                                                                <item name="firstname"
+                                                            <item name="firstname"
+                                                                xsi:type="array">
+                                                                <item name="sortOrder"
+                                                                    xsi:type="string">20</item>
+                                                                <item name="config"
+                                                                    xsi:type="array">
+                                                                    <item name="placeholder"
+                                                                        xsi:type="string"
+                                                                        translate="true">Enter First Name</item>
+                                                                </item>
+                                                            </item>
+                                                            <item name="lastname"
+                                                                xsi:type="array">
+                                                                <item name="sortOrder"
+                                                                    xsi:type="string">10</item>
+                                                                <item name="config"
+                                                                    xsi:type="array">
+                                                                    <item name="placeholder"
+                                                                        xsi:type="string"
+                                                                        translate="true">Enter Last Name</item>
+                                                                </item>
+                                                            </item>
+                                                            <item name="telephone"
+                                                                xsi:type="array">
+                                                                <item name="component"
+                                                                    xsi:type="string">
+                                                                    Magento_Checkout/js/form/element/telephone</item>
+                                                                <item name="config"
                                                                     xsi:type="array">
                                                                     <item name="sortOrder"
-                                                                        xsi:type="string">20</item>
-                                                                    <item name="config"
-                                                                        xsi:type="array">
-                                                                        <item name="placeholder"
-                                                                            xsi:type="string"
-                                                                            translate="true">Enter First Name</item>
-                                                                    </item>
-                                                                </item>
-                                                                <item name="lastname"
-                                                                    xsi:type="array">
-                                                                    <item name="sortOrder"
-                                                                        xsi:type="string">10</item>
-                                                                    <item name="config"
-                                                                        xsi:type="array">
-                                                                        <item name="placeholder"
-                                                                            xsi:type="string"
-                                                                            translate="true">Enter Last Name</item>
-                                                                    </item>
-                                                                </item>
-                                                                <item name="telephone"
-                                                                    xsi:type="array">
-                                                                    <item name="config"
-                                                                        xsi:type="array">
-                                                                        <item name="sortOrder"
                                                                         xsi:type="string">30</item>
-                                                                        <item name="placeholder"
-                                                                            xsi:type="string"
-                                                                            translate="true">Enter Phone Number</item>
-                                                                    </item>
+                                                                    <item name="placeholder"
+                                                                        xsi:type="string"
+                                                                        translate="true">Enter Phone Number</item>
                                                                 </item>
-                                                                <item name="city" xsi:type="array">
-                                                                    <item name="config"
-                                                                        xsi:type="array">
-                                                                        <item name="placeholder"
-                                                                            xsi:type="string"
-                                                                            translate="true">Your city</item>
-                                                                    </item>
+                                                            </item>
+                                                            <item name="city"
+                                                                xsi:type="array">
+                                                                <item name="config"
+                                                                    xsi:type="array">
+                                                                    <item name="placeholder"
+                                                                        xsi:type="string"
+                                                                        translate="true">Your city</item>
                                                                 </item>
-                                                                <item name="company" xsi:type="array">
-                                                                    <item name="config"
-                                                                        xsi:type="array">
-                                                                        <item name="sortOrder"
+                                                            </item>
+                                                            <item name="company"
+                                                                xsi:type="array">
+                                                                <item name="config"
+                                                                    xsi:type="array">
+                                                                    <item name="sortOrder"
                                                                         xsi:type="string">80</item>
-                                                                        <item name="placeholder"
-                                                                            xsi:type="string"
-                                                                            translate="true">Company</item>
-                                                                    </item>
+                                                                    <item name="placeholder"
+                                                                        xsi:type="string"
+                                                                        translate="true">
+                                                                        Company</item>
+                                                                </item>
+                                                            </item>
+
+                                                            <item name="comment"
+                                                                xsi:type="array">
+                                                                <item name="sortOrder"
+                                                                    xsi:type="string">100</item>
+                                                                <item name="config"
+                                                                    xsi:type="array">
+                                                                    <item name="placeholder"
+                                                                        xsi:type="string"
+                                                                        translate="true">Enter Comment</item>
                                                                 </item>
                                                             </item>
                                                         </item>

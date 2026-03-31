@@ -1,0 +1,13 @@
+<!-- ko if: isDisplayed() -->
+<tr class="totals custom-fee excl">
+    <th class="mark" scope="row">
+        <span class="label" data-bind="i18n: title"></span>
+    </th>
+    <td class="amount">
+        <span
+            class="price"
+            data-bind="text: getValue(), attr: {'data-th': title}"
+        ></span>
+    </td>
+</tr>
+<!-- /ko -->

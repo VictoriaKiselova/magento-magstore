@@ -1,0 +1,39 @@
+<div class="custom-checkout-form-container">
+    <div class="field required choice-group">
+        <label class="label">
+            <span>Тип упаковки</span>
+        </label>
+        <div class="control">
+            <div class="field choice">
+                <input
+                    type="checkbox"
+                    class="checkbox"
+                    id="custom_checkout_packaging_type_standard"
+                    data-bind="checked: packagingTypeStandard, event: { change: function () { onFieldChange('packagingType'); } }"
+                />
+                <label
+                    class="label"
+                    for="custom_checkout_packaging_type_standard"
+                >
+                    <span>Стандарт</span>
+                </label>
+            </div>
+            <div class="field choice">
+                <input
+                    type="checkbox"
+                    class="checkbox"
+                    id="custom_checkout_packaging_type_gift"
+                    data-bind="checked: packagingTypeGift, event: { change: function () { onFieldChange('packagingType'); } }"
+                />
+                <label class="label" for="custom_checkout_packaging_type_gift">
+                    <span>Подарункова</span>
+                </label>
+            </div>
+        </div>
+        <!-- ko if: packagingTypeError -->
+        <div class="message message-error error">
+            <div data-bind="text: packagingTypeError"></div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

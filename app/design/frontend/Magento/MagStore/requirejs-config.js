@@ -1,6 +1,7 @@
 var config = {
     paths: {
         inputmask: "js/jquery.inputmask.bundle",
+        buttonTop: "js/back-to-top",
     },
     shim: {
         inputmask: {

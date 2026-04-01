@@ -6,5 +6,11 @@
         <referenceBlock name="header" remove="true" />
         <move element="top.search" destination="header.panel" before="top.links" />
         <move element="minicart" destination="header.panel" after="top.search" />
+
+
+        <referenceContainer name="footer-container">
+            <block class="Magento\Framework\View\Element\Template" name="button-top"
+                template="Magento_Theme::button-top.phtml" before="footer" />
+        </referenceContainer>
     </body>
 </page>

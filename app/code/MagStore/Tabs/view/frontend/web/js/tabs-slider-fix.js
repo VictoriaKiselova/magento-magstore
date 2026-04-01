@@ -20,3 +20,4 @@ define(["jquery", "underscore", "mage/tabs"], function ($, _) {
         });
     };
 });
+

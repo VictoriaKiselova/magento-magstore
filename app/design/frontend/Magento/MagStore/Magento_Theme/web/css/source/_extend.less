@@ -34,13 +34,41 @@
         padding: 0;
     }
     .sidebar-main {
-         width: 343px !important;
+        width: 343px !important;
         flex: none;
         order: 1;
     }
     .sidebar-additional {
         flex: 1;
         order: 3;
+    }
+}
+
+.page-footer {
+    .button-arrow-footer {
+        outline: none;
+        border: 0.1px solid @gray-light;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: fixed;
+        right: 10%;
+        bottom: 200px;
+        z-index: 9999;
+        background-color: @light-blue;
+        display: none;
+
+        .icon-arrow {
+            height: 24px;
+            width: 24px;
+            stroke: @dark-black;
+            fill: @dark-black;
+        }
+    }
+    .activeBtnTop {
+        display: block;
     }
 }
 

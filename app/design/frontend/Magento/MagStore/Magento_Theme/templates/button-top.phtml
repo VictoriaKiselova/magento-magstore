@@ -1,0 +1,8 @@
+<?php $iconSpriteUrl = $block->getViewFileUrl('images/sprite-icons.svg'); ?>
+
+<button type="button" class="button-arrow-footer" data-mage-init='{"buttonTop":{}}'>
+    <svg class="icon-arrow" aria-hidden="true" focusable="false">
+        <use href="<?= $escaper->escapeUrl($iconSpriteUrl . '#icon-arrow-top'); ?>"
+            xlink:href="<?= $escaper->escapeUrl($iconSpriteUrl . '#icon-arrow-top'); ?>"></use>
+    </svg>
+</button>

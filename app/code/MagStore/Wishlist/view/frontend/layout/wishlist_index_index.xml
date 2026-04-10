@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="wishlist.clear.button"
+                   template="MagStore_Wishlist::button/clear.phtml"
+                   before="-"/>
+        </referenceContainer>
+
+        <referenceBlock name="customer.wishlist.item.comment" remove="true"/>
+        <referenceBlock name="customer.wishlist.item.review" remove="true"/>
+        <referenceBlock name="customer.wishlist.button.update" remove="true"/>
+        <referenceBlock name="customer.wishlist.item.edit" remove="true"/>
+
+        <referenceBlock name="customer.wishlist.items">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">MagStore_Wishlist::item/list.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="customer.wishlist.item.remove">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">MagStore_Wishlist::remove.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="customer.wishlist.item.cart">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">MagStore_Wishlist::item/column/cart.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="product.price.render.wishlist">
+            <arguments>
+                <argument name="price_type_code" xsi:type="string">final_price</argument>
+                <argument name="price_label" xsi:type="boolean">false</argument>
+                <argument name="include_container" xsi:type="boolean">false</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,13 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$iconSpriteUrl = $block->getViewFileUrl('images/sprite-icons.svg');
+?>
+
+<button type="button" class="load-more-wishlist-btn btn-load-more">
+    <svg class="icon-Frame" aria-hidden="true" focusable="false">
+        <use href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-Frame'); ?>"
+             xlink:href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-Frame'); ?>"></use>
+    </svg>
+    <p><?= $block->escapeHtml(__('Show 48 more orders')) ?></p>
+</button>

@@ -4,23 +4,41 @@
 .page-footer {
     background-color: @light-blue !important;
 }
+
 .page-header .header.panel {
     display: flex;
     align-items: center;
 }
+
 .logo img {
     width: 32px !important;
     height: auto !important;
 }
+
 .message.info {
     margin: 0 !important;
 }
+
 .about-us-block > h1 {
     font-size: 2.6rem !important;
     margin-bottom: 1.6rem;
 }
-.minicart-wrapper .action.showcart:before {
-    color: #efefef !important;
+
+//.minicart-wrapper .action.showcart:before {
+//    color: #efefef !important;
+//}
+
+.minicart-wrapper .action.showcart {
+    &:before {
+        display: none;
+    }
+
+    .icon-mini-cart {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 .page-layout-3columns {
     .columns {
@@ -28,16 +46,19 @@
         flex-direction: column;
         gap: 20px !important;
     }
+
     .column.main {
         flex: 2 !important;
         order: 2;
         padding: 0;
     }
+
     .sidebar-main {
         width: 343px !important;
         flex: none;
         order: 1;
     }
+
     .sidebar-additional {
         flex: 1;
         order: 3;
@@ -67,6 +88,7 @@
             fill: @dark-black;
         }
     }
+
     .activeBtnTop {
         display: block;
     }

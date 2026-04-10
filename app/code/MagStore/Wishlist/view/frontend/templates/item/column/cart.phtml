@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Cart $block */
+/** @var \Magento\Wishlist\Model\Item $item */
+
+$item = $block->getItem();
+$product = $item->getProduct();
+$iconSpriteUrl = $block->getViewFileUrl('images/sprite-icons.svg');
+?>
+<?php if ($product->isSaleable()) : ?>
+    <button type="button"
+            class="action tocart primary wishlist-actions-toolbar"
+            data-role="tocart"
+            data-post='<?= /* @noEscape */
+            $block->getItemAddToCartParams($item) ?>'
+            data-item-id="<?= $block->escapeHtmlAttr($item->getId()) ?>"
+            title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>">
+        <svg class="icon-mini-cart-custom" width="15" height="15" aria-hidden="true" focusable="false">
+            <use href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-mini-cart-custom') ?>"
+                 xlink:href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-mini-cart-custom') ?>"></use>
+        </svg>
+    </button>
+<?php else : ?>
+    <span class="stock <?= $product->getIsSalable() ? 'available' : 'unavailable' ?>">
+        <?= $block->escapeHtml($product->getIsSalable() ? __('In stock') : __('Out of stock')) ?>
+    </span>
+<?php endif; ?>

@@ -1,0 +1,79 @@
+<?php
+/**
+ * MagStore Wishlist - Custom Item List Template
+ * @var \Magento\Wishlist\Block\Customer\Wishlist\Items $block
+ */
+
+$items = $block->getItems();
+$iconSpriteUrl = $block->getViewFileUrl('images/sprite-icons.svg');
+?>
+
+<div class="products-grid wishlist">
+    <?php if (count($items)) : ?>
+        <ol class="product-items">
+            <?php foreach ($items as $item) : ?>
+                <li data-row="product-item"
+                    class="product-item"
+                    id="item_<?= $block->escapeHtmlAttr($item->getId()) ?>">
+                    <div class="product-item-info" data-container="product-grid">
+
+                        <?= $block->getLayout()
+                            ->getBlock('customer.wishlist.item.remove')
+                            ->setItem($item)
+                            ->toHtml() ?>
+
+                        <?= $block->getLayout()
+                            ->getBlock('customer.wishlist.item.image')
+                            ->setItem($item)
+                            ->toHtml() ?>
+
+                        <?= $block->getLayout()
+                            ->getBlock('customer.wishlist.item.name')
+                            ->setItem($item)
+                            ->toHtml() ?>
+
+                        <div class="wishlist-bottom">
+                            <?= $block->getLayout()
+                                ->getBlock('customer.wishlist.item.price')
+                                ->setItem($item)
+                                ->toHtml() ?>
+
+                            <?= $block->getLayout()
+                                ->getBlock('customer.wishlist.item.cart')
+                                ->setItem($item)
+                                ->toHtml() ?>
+                        </div>
+
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+
+        <button type="button" class="load-more-wishlist-btn btn-load-more">
+            <svg class="icon-Frame" aria-hidden="true" focusable="false">
+                <use href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-Frame'); ?>"
+                     xlink:href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-Frame'); ?>"></use>
+            </svg>
+            <p><?= $block->escapeHtml(__('Show 48 more orders')) ?></p>
+        </button>
+
+    <?php else : ?>
+        <div class="message info empty">
+            <span><?= $block->escapeHtml(__('You have no items in your wish list.')) ?></span>
+        </div>
+    <?php endif; ?>
+</div>
+
+<?php
+$additionalBlocks = [
+    $block->getLayout()->getBlock('customer.wishlist.item.image'),
+    $block->getLayout()->getBlock('customer.wishlist.item.price'),
+    $block->getLayout()->getBlock('customer.wishlist.item.cart'),
+];
+foreach ($additionalBlocks as $additionalBlock) {
+    if ($additionalBlock && method_exists($additionalBlock, 'getAdditionalHtml')) {
+        echo $additionalBlock->getAdditionalHtml();
+    }
+}
+?>
+

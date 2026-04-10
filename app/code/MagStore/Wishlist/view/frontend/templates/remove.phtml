@@ -1,0 +1,14 @@
+<?php
+/** @var \Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Remove $block */
+
+$iconSpriteUrl = $block->getViewFileUrl('images/sprite-icons.svg');
+?>
+
+<a href="#" class="remove-from-wishlist-btn btn-remove action delete"
+   data-role="remove"
+   data-post-remove='<?= /* @noEscape */ $block->getItemRemoveParams($block->getItem()) ?>'>
+    <svg class="icon-cross" aria-hidden="true" focusable="false">
+        <use href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-cross'); ?>"
+             xlink:href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-cross'); ?>"></use>
+    </svg>
+</a>

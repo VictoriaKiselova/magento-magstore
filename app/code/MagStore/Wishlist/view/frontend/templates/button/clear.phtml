@@ -1,0 +1,11 @@
+<?php /** @var \Magento\Framework\View\Element\Template $block */ ?>
+
+<div class="clear-wishlist-wrapper">
+    <h2><?= $block->escapeHtml('My Wish List') ?></h2>
+    <form action="<?= $block->getUrl('wishlist/index/clear') ?>" method="post">
+        <?= $block->getBlockHtml('formkey') ?>
+        <button type="submit" class="action clear-wishlist">
+            Clear wishlist
+        </button>
+    </form>
+</div>

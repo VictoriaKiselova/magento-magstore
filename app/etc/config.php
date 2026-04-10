@@ -382,6 +382,7 @@ return [
         'MagStore_Extension' => 1,
         'MagStore_ProductFeatures' => 1,
         'MagStore_Tabs' => 1,
+        'MagStore_Wishlist' => 1,
         'MarkShust_LayoutHandleLogger' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeCustomerBalance' => 1,

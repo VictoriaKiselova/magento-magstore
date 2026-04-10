@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="header" remove="true" />
-        <move element="top.search" destination="header.panel" before="top.links" />
-        <move element="minicart" destination="header.panel" after="top.search" />
+        <referenceBlock name="header" remove="true"/>
+        <move element="top.search" destination="header.panel" before="top.links"/>
+        <!--        <move element="minicart" destination="header.panel" after="top.search" />-->
 
 
         <referenceContainer name="footer-container">
             <block class="Magento\Framework\View\Element\Template" name="button-top"
-                template="Magento_Theme::button-top.phtml" before="footer" />
+                   template="Magento_Theme::button-top.phtml" before="footer"/>
         </referenceContainer>
     </body>
 </page>

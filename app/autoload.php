@@ -1,12 +1,10 @@
 <?php
-
 /**
  * Register basic autoloader that uses include path
  *
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-
 declare(strict_types=1);
 
 use Magento\Framework\Autoload\AutoloaderRegistry;
@@ -22,7 +20,7 @@ use Magento\Framework\Autoload\ClassLoaderWrapper;
 if (!\is_readable(VENDOR_PATH)) {
     throw new \Exception(
         'We can\'t read some files that are required to run the Magento application. '
-            . 'This usually means file permissions are set incorrectly.'
+         . 'This usually means file permissions are set incorrectly.'
     );
 }
 

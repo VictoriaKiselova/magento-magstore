@@ -1,0 +1,22 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \MagStore\Wishlist\ViewModel\UserDetails $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+<?php $iconSpriteUrl = $block->getViewFileUrl('images/sprite-icons.svg'); ?>
+
+<?php if ($viewModel && $viewModel->isLoggedIn()): ?>
+    <div class="user-details-wrapper">
+        <svg class="icon-user-details" aria-hidden="true" focusable="false">
+            <use href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-user-circle'); ?>"
+                 xlink:href="<?= $block->escapeUrl($iconSpriteUrl . '#icon-user-circle'); ?>"></use>
+        </svg>
+        <div>
+            <p class="name"><?= $viewModel->getCustomerName(); ?></p>
+            <p class="email"> <?= $viewModel->getCustomerEmail(); ?></p>
+        </div>
+    </div>
+<?php else: ?>
+    <p> The user is not logged in</p>
+<?php endif; ?>
+
